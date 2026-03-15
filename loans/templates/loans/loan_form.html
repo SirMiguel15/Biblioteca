@@ -1,0 +1,23 @@
+{% extends "catalog/base.html" %}
+
+{% block title %}Solicitar préstamo{% endblock %}
+
+{% block content %}
+
+    <h1>Solicitar préstamo</h1>
+
+    {% if form.errors %}
+        {% for error in form.non_field_errors %}
+            <p style="color:red;">{{ error }}</p>
+        {% endfor %}
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Confirmar préstamo</button>
+    </form>
+
+    <a href="{% url 'book-list' %}">Cancelar</a>
+
+{% endblock %}

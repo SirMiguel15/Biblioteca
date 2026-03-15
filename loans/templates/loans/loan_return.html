@@ -1,0 +1,21 @@
+{% extends "catalog/base.html" %}
+
+{% block title %}Registrar devolución{% endblock %}
+
+{% block content %}
+
+    <h1>Registrar devolución</h1>
+
+    <p><strong>Libro:</strong> {{ object.book.title }}</p>
+    <p><strong>Usuario:</strong> {{ object.user.username }}</p>
+    <p><strong>Fecha inicio:</strong> {{ object.start_date }}</p>
+    <p><strong>Vencimiento:</strong> {{ object.due_date }}</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Confirmar devolución</button>
+    </form>
+
+    <a href="{% url 'all-loans' %}">Cancelar</a>
+
+{% endblock %}

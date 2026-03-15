@@ -1,0 +1,17 @@
+{% extends "catalog/base.html" %}
+
+{% block title %}Eliminar libro{% endblock %}
+
+{% block content %}
+
+    <h1>¿Eliminar "{{ object.title }}"?</h1>
+    <p>Esta acción no se puede deshacer.</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Sí, eliminar</button>
+    </form>
+
+    <a href="{% url 'book-list' %}">Cancelar</a>
+
+{% endblock %}
