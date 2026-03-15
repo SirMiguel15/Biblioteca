@@ -71,5 +71,4 @@ class CatalogTestCase(TestCase):
         response = self.client.get("/books/new/")
         self.assertEqual(response.status_code, 200)
 
-# Prueba 1 - Crear Author y verificar campo name
 
